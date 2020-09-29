@@ -26,18 +26,24 @@ public class RigidbodyCharacterController : MonoBehaviour
     private void FixedUpdate()
     {
         var inputDirection = new Vector3(input.x, 0, input.y);
+
+        Vector3 cameraFlattenedForward = Camera.main.transform.forward;
+        cameraFlattenedForward.y = 0;
+        var cameraRotation = Quaternion.LookRotation(cameraFlattenedForward);
+
+        Vector3 cameraRelativeInputDirection = (cameraRotation * inputDirection);
         //rigidbody.AddForce(inputDirection*accelerationForce);
-        if (inputDirection.magnitude > 0)
-        {
-            collider.material = movingPhysicsMaterial;
-        }
-        else
-        {
-            collider.material = stoppingPhysicsMaterial;
-        }
+        //if (inputDirection.magnitude > 0)
+        //{
+        //    collider.material = movingPhysicsMaterial;
+        //}
+        //else
+        //{
+        //    collider.material = stoppingPhysicsMaterial;
+        //}
         if (rigidbody.velocity.magnitude < maxSpeed)
         {
-            rigidbody.AddForce(inputDirection * accelerationForce, ForceMode.Acceleration);
+            rigidbody.AddForce(cameraRelativeInputDirection * accelerationForce, ForceMode.Acceleration);
         }
         //rigidbody.velocity = Vector3.ClampMagnitude(rigidbody.velocity, maxSpeed);
     }

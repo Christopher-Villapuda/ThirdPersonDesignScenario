@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 43388524}
   - component: {fileID: 43388530}
   - component: {fileID: 43388529}
+  - component: {fileID: 43388531}
   m_Layer: 0
   m_Name: PortculisDoor
   m_TagString: Untagged
@@ -1850,6 +1851,25 @@ MonoBehaviour:
   _data:
     _json: '{"declarations":{"collection":{"$content":[],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
+--- !u!95 &43388531
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43388523}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2d24688428c2a6498b22c4296ef2437, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &83527991
 GameObject:
   m_ObjectHideFlags: 3
